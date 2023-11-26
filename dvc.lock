@@ -1,0 +1,20 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/stage_01_load_and_save.py --config=params.yaml
+    deps:
+    - path: src/stage_01_load_and_save.py
+      md5: 7fc2e1f59ca541bb2f2b2c2651b7cb51
+      size: 1190
+    - path: src/utils/common_utils.py
+      md5: e05893d4b846dd710b56f85ca3406e17
+      size: 1221
+    params:
+      params.yaml:
+        artifacts.raw_local_data: artifacts/raw_local_data_dir/data.csv
+        data_source.uci_source: 
+          https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv
+    outs:
+    - path: artifacts/raw_local_data_dir/data.csv
+      md5: 7c92f1ee593c0fbd2ad8c67ba5c446df
+      size: 93599
