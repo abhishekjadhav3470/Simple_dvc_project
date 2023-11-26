@@ -1,1 +1,28 @@
-from dvc import *
+import pandas as pd
+import argparse
+from src.utils.common_utils import read_params
+import logging
+
+logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
+logging.basicConfig(level=logging.DEBUG, format=logging_str)
+
+
+def get_data(config_path):
+    config = read_params(config_path)
+
+    print(config)
+
+    return None
+
+
+if __name__ == "__main__":
+    args = argparse.ArgumentParser()
+    args.add_argument("--config", default="params.yaml")
+    parsed_args = args.parse_args()
+
+    try:
+        data = get_data(config_path=parsed_args.config)
+        #ogging.info(f"reading and writing raw data stage completed")
+    except Exception as e:
+        # logging.error(e)
+         raise e
