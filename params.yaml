@@ -18,17 +18,17 @@ artifacts:
     train_path: artifacts/processed_data/train.csv
     test_path: artifacts/processed_data/test.csv
 
-#   reports:
-#     reports_dir: artifacts/report
-#     params: artifacts/report/params.json
-#     scores: artifacts/report/scores.json
+  reports:
+    reports_dir: artifacts/report
+    params: artifacts/report/params.json
+    scores: artifacts/report/scores.json
 
-#   model_dir: artifacts/saved_models
-#   model_path: artifacts/saved_models/model.joblib
+  model_dir: artifacts/saved_models
+  model_path: artifacts/saved_models/model.joblib
 
 
-# estimators:
-#   ElasticNet:
-#     params:
-#       alpha: 0.7
-#       l1_ratio: 0.4
+estimators:
+  ElasticNet:
+    params:
+      alpha: 0.7
+      l1_ratio: 0.4
